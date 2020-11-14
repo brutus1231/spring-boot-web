@@ -20,11 +20,12 @@ public class UserController {
     @GetMapping
     public String users(Model model) {
         model.addAttribute("users", userService.list());
+        model.addAttribute("user", UserDto.builder().build());
         return "users";
     }
 
     @PostMapping
-    public String users(@ModelAttribute("user") UserDto user, Model model) {
+    public String addUser(@ModelAttribute("user") UserDto user, Model model) {
         userService.add(user);
         return "users";
     }
