@@ -34,7 +34,7 @@
 
     <br/>
     <div id="addUserDiv">
-        <form class="form-horizontal" action="/users/add" method="post">
+        <form class="form-horizontal" method="post"  th:action="@{/users/add}" th:object="${user}">
             <fieldset>
                 <div id="legend">
                     <legend class="">Add new user</legend>
@@ -43,7 +43,7 @@
                     <!-- First name -->
                     <label class="control-label"  for="firstName">First name</label>
                     <div class="controls">
-                        <input type="text" id="firstName" name="firstName" placeholder="" class="input-xlarge">
+                        <input type="text" id="firstName" name="firstName" placeholder="" class="input-xlarge" th:field="*{firstName}">
                         <p class="help-block">First name can contain any letters without spaces</p>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                     <!-- Last name -->
                     <label class="control-label" for="lastName">Last name</label>
                     <div class="controls">
-                        <input type="text" id="lastName" name="lastName" placeholder="" class="input-xlarge">
+                        <input type="text" id="lastName" name="lastName" placeholder="" class="input-xlarge" th:field="*{lastName}">
                         <p class="help-block">Please provide your last name</p>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                     <!-- Address-->
                     <label class="control-label" for="address">Address</label>
                     <div class="controls">
-                        <input type="password" id="address" name="address" placeholder="" class="input-xlarge">
+                        <input type="password" id="address" name="address" placeholder="" class="input-xlarge" th:field="*{address}">
                         <p class="help-block">Address should be at least 4 characters</p>
                     </div>
                 </div>
