@@ -1,12 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Users</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
-<body>
+<body style="background-color:#6495ED">
 
-Users:
+
+<div class="container">
+    <br/>
+    <h3 class="h3">Users:</h3>
+    <table class="table table-bordered">
+        <tr class="table-striped">
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>Adres</th>
+        </tr>
+        <th:block th:each="user : ${users}">
+            <tr>
+                <td th:text="${user.firstName}"></td>
+                <td th:text="${user.lastName}"></td>
+                <td th:text="${user.address}"></td>
+            </tr>
+        </th:block>
+    </table>
+
+    <div>
+        <input type="button" value="dodaj" onclick="" class="btn btn-success"/>
+        <input type="button" value="edytuj" onclick="" class="btn btn-success"/>
+    </div>
+
+    <div>
+        <form class="form-horizontal" action="/users/add" method="post">
+            <fieldset>
+                <div id="legend">
+                    <legend class="">Add new user</legend>
+                </div>
+                <div class="control-group">
+                    <!-- Username -->
+                    <label class="control-label"  for="firstName">First name</label>
+                    <div class="controls">
+                        <input type="text" id="firstName" name="firstName" placeholder="" class="input-xlarge">
+                        <p class="help-block">First name can contain any letters without spaces</p>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <!-- E-mail -->
+                    <label class="control-label" for="lastName">Last name</label>
+                    <div class="controls">
+                        <input type="text" id="lastName" name="lastName" placeholder="" class="input-xlarge">
+                        <p class="help-block">Please provide your last name</p>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <!-- Password-->
+                    <label class="control-label" for="address">Address</label>
+                    <div class="controls">
+                        <input type="password" id="address" name="address" placeholder="" class="input-xlarge">
+                        <p class="help-block">Address should be at least 4 characters</p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <!-- Button -->
+                    <div class="controls">
+                        <button class="btn btn-success">Add</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
 
 </body>
 </html>
