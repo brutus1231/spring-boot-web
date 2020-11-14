@@ -5,6 +5,9 @@
     <title>Main page</title>
     <script>
         function copyText(){
+            var elemMyText = document.getElementById("myText");
+            document.getElementById("joinedText").innerHTML =
+            document.getElementById("joinedText").innerHTML + "<br/>" + elemMyText.value;
         }
     </script>
 </head>
