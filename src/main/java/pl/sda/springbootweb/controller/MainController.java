@@ -23,4 +23,10 @@ public class MainController {
         mv.addObject("variable", "ide na zakupy");
         return mv;
     }
+
+    @GetMapping("/strona3")
+    public String buttonClicked(Model model) {
+        model.addAttribute("joinedText3", "xxx");
+        return "index";
+    }
 }
