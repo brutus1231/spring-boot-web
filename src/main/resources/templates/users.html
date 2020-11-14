@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Users</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="jquery-3.5.1.min.js"></script>
 </head>
 <body style="background-color:#6495ED">
 
@@ -31,14 +32,15 @@
         <input type="button" value="edytuj" onclick="" class="btn btn-success"/>
     </div>
 
-    <div>
+    <br/>
+    <div id="addUserDiv">
         <form class="form-horizontal" action="/users/add" method="post">
             <fieldset>
                 <div id="legend">
                     <legend class="">Add new user</legend>
                 </div>
                 <div class="control-group">
-                    <!-- Username -->
+                    <!-- First name -->
                     <label class="control-label"  for="firstName">First name</label>
                     <div class="controls">
                         <input type="text" id="firstName" name="firstName" placeholder="" class="input-xlarge">
@@ -47,7 +49,7 @@
                 </div>
 
                 <div class="control-group">
-                    <!-- E-mail -->
+                    <!-- Last name -->
                     <label class="control-label" for="lastName">Last name</label>
                     <div class="controls">
                         <input type="text" id="lastName" name="lastName" placeholder="" class="input-xlarge">
@@ -56,7 +58,7 @@
                 </div>
 
                 <div class="control-group">
-                    <!-- Password-->
+                    <!-- Address-->
                     <label class="control-label" for="address">Address</label>
                     <div class="controls">
                         <input type="password" id="address" name="address" placeholder="" class="input-xlarge">
