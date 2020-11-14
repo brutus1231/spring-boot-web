@@ -25,7 +25,9 @@ public class MainController {
     }
 
     @PostMapping("/strona3")
-    public String buttonClicked(@ModelAttribute("myText3") String myText3, Model model) {
+    public String buttonClicked(@ModelAttribute("myText3") String myText3,
+                                @ModelAttribute("oldJoinedText") String oldJoinedText,
+                                Model model) {
         model.addAttribute("joinedText3", myText3);
         return "index";
     }
