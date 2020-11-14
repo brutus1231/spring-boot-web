@@ -18,13 +18,13 @@ Main page !!!
 <p th:text="${variable}"></p>
 
 <input id = "myText" type = "text" />
-<input id = "myButton" type = "button" value="Napisz" onClick="copyText()"/>
+<input id = "myButton" type = "button" value="Napisz" onClick="copyText()" class="btn btn-primary"/>
 <div id = "joinedText"></div>
 
 <br/><br/>
 <form method="post" action="/strona3">
     <input id = "myText3" name = "myText3" type = "text" />
-    <input id = "myButton3" name = "myButton3" type = "submit" value="Napisz3"/>
+    <input id = "myButton3" name = "myButton3" type = "submit" value="Napisz3" class="btn btn-primary"/>
     <input id="oldJoinedText" name="oldJoinedText" type = "text" >000</input>
 </form>
 
@@ -33,7 +33,7 @@ Main page !!!
 <br/><br/>
 <form method="get" action="/strona4">
     <input id = "myText4" name = "myText4" type = "text" />
-    <input id = "myButton4" name = "myButton4" type = "submit" value="Napisz4"/>
+    <input id = "myButton4" name = "myButton4" type = "submit" value="Napisz4" class="btn btn-primary"/>
 </form>
 </body>
 </html>
