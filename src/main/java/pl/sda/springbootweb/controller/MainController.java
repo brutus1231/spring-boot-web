@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
 @Controller
 public class MainController {
 
@@ -30,5 +33,17 @@ public class MainController {
                                 Model model) {
         model.addAttribute("joinedText3", myText3);
         return "index";
+    }
+
+    @GetMapping("/strona4")
+    public String forwardButtonClicked(HttpServletResponse response, @ModelAttribute("myText4") String myText4, Model model) throws IOException {
+        model.addAttribute("myText4", myText4);
+        response.sendRedirect("/details");
+        return "details";
+    }
+
+    @GetMapping("/details")
+    public String details(){
+        return "details";
     }
 }

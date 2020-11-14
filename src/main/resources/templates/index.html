@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Main page</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <script>
         function copyText() {
             var elemMyText = document.getElementById("myText");
@@ -29,5 +30,10 @@ Main page !!!
 
 <div th:text="${joinedText3}"></div>
 
+<br/><br/>
+<form method="get" action="/strona4">
+    <input id = "myText4" name = "myText4" type = "text" />
+    <input id = "myButton4" name = "myButton4" type = "submit" value="Napisz4"/>
+</form>
 </body>
 </html>
