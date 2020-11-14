@@ -3,6 +3,7 @@ package pl.sda.springbootweb.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -24,8 +25,8 @@ public class MainController {
     }
 
     @PostMapping("/strona3")
-    public String buttonClicked(Model model) {
-        model.addAttribute("joinedText3", "xxx");
+    public String buttonClicked(@ModelAttribute("myText3") String myText3, Model model) {
+        model.addAttribute("joinedText3", myText3);
         return "index";
     }
 }
