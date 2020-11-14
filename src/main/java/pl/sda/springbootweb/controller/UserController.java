@@ -27,6 +27,7 @@ public class UserController {
     @PostMapping("/add")
     public String addUser(@ModelAttribute("user") UserDto user, Model model) {
         userService.add(user);
+        model.addAttribute("users", userService.list());
         return "users";
     }
 
