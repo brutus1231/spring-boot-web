@@ -3,10 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Main page</title>
+    <script>
+        function copyText(){
+        }
+    </script>
 </head>
 <body>
 Main page !!!
 <br />
 <p th:text="${variable}"></p>
+
+<input id = "myText" type = "text" />
+<input id = "myButton" type = "button" value="Napisz" onClick="copyText()"/>
+<div id = "joinedText"></div>
 </body>
 </html>
