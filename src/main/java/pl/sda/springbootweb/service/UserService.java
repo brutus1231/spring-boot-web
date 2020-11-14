@@ -2,7 +2,6 @@ package pl.sda.springbootweb.service;
 
 import org.springframework.stereotype.Service;
 import pl.sda.springbootweb.dto.UserDto;
-import pl.sda.springbootweb.model.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,11 +21,10 @@ public class UserService {
     }
 
     public void delete(Long id) {
-        users.remove(
+        UserDto userToDelete =
                 users.stream()
                         .filter(t -> t.getId().equals(id))
-                        .collect(Collectors.toList())
-        );
-
+                        .collect(Collectors.toList()).get(0);
+        users.remove(userToDelete);
     }
 }
